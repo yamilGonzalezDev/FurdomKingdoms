@@ -1,0 +1,136 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "house.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Todos los archivos (*)",
+    "fileStates": {
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "Bricks.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/UTN/Programación II/gameName/assets/demo.tmx": {
+            "scale": 1.091015625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 479.82814178302897,
+                "y": 255.7250268528464
+            }
+        },
+        "C:/UTN/Programación II/gameName/assets/demo.tmx#tileset": {
+            "scaleInDock": 1
+        },
+        "C:/UTN/Programación II/gameName/assets/platform.tmx": {
+            "scale": 0.08319921875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 6400.30048359078,
+                "y": 1778.862857411146
+            }
+        },
+        "C:/UTN/Programación II/gameName/assets/platform.tmx#tileset02": {
+            "scaleInDock": 1
+        },
+        "C:/UTN/Programación II/gameName/images/tilemap/platform.tsx": {
+            "scaleInDock": 1
+        },
+        "ChimneyBottom.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "ChimneyTop.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "HouseWalls.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "InnerWalls.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "InnweWalls.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 8
+        },
+        "Roof.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "Tiles_1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "house.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 11,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 383.9545454545455,
+                "y": 520.1818181818182
+            }
+        },
+        "houseBackground.tsx": {
+            "scaleInDock": 0.25,
+            "scaleInEditor": 1
+        },
+        "houseWalls.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "innerWall.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "frame.defaultDuration": 150,
+    "last.exportedFilePath": "C:/UTN/Programación II/gameName/Lvls",
+    "last.externalTilesetPath": "C:/UTN/Programación II/gameName/Lvls",
+    "last.imagePath": "C:/UTN/Programación II/gameName/Textures/firstLevel",
+    "map.height": 38,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 50,
+    "openFiles": [
+        "house.tmx",
+        "HouseWalls.tsx",
+        "InnerWalls.tsx",
+        "Roof.tsx",
+        "ChimneyBottom.tsx",
+        "ChimneyTop.tsx"
+    ],
+    "project": "house.tiled-project",
+    "recentFiles": [
+        "ChimneyTop.tsx",
+        "ChimneyBottom.tsx",
+        "Roof.tsx",
+        "InnerWalls.tsx",
+        "HouseWalls.tsx",
+        "house.tmx",
+        "C:/UTN/Programación II/gameName/assets/demo.tmx",
+        "C:/UTN/Programación II/gameName/assets/platform.tmx",
+        "Tiles_1.tsx",
+        "InnweWalls.tsx",
+        "innerWall.tsx",
+        "houseWalls.tsx"
+    ],
+    "tileset.lastUsedFilter": "Archivos de conjuntos de patrones Tiled (*.tsx *.xml)",
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 50,
+        "width": 48
+    }
+}
