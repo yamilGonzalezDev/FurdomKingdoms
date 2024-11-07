@@ -1,6 +1,6 @@
 #include <SFML/Audio.hpp>
 #include <box2d/box2d.h>
-#include "globals.hpp"
+#include "game.hpp"
 
 int main()
 {
@@ -17,8 +17,6 @@ int main()
 //void moveEnemy(sf::Sprite&, float);
 //
 //const float moveSpeed = 20.f;
-//
-//class
 //
 //int main()
 //{

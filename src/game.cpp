@@ -1,5 +1,10 @@
 #include "game.hpp"
 
+//void mensaje()
+//{
+//    std::cout << "Hasta acá llego" << std::endl;
+//}
+
 Game::Game()
     : gravity(0.f, 15.f), collisionCheck(new Collision())
 {
@@ -19,7 +24,6 @@ Game::Game()
 void Game::gameEvents()
 {
     Ground ground;
-    //Player test;
     Enemy enemy;
 
     sf::Texture house;
@@ -37,13 +41,13 @@ void Game::gameEvents()
         return;
     }
 
-    int bodyCount = 0;
-    for(b2Body* b = world->GetBodyList(); b != nullptr; b = b->GetNext())
-    {
-        bodyCount++;
-    }
-
-    std::cout << "Cantidad de cuerpos en el mundo: " << bodyCount << std::endl;
+//    int bodyCount = 0;
+//    for(b2Body* b = world->GetBodyList(); b != nullptr; b = b->GetNext())
+//    {
+//        bodyCount++;
+//    }
+//
+//    std::cout << "Cantidad de cuerpos en el mundo: " << bodyCount << std::endl;
     while(window.isOpen())
     {
         sf::Event event;
@@ -51,7 +55,6 @@ void Game::gameEvents()
         {
             if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
             {
-                player->edificio.stop();
                 music.stop();
                 window.close();
             }
@@ -78,28 +81,28 @@ void Game::gameEvents()
 
         player->updateAnimation(deltaTime);
 
-        npc->npcMove(deltaTime);
-        npc->updateAnimation(deltaTime);
+        /*npc->npcMove(deltaTime);
+        npc->updateAnimation(deltaTime);*/
 
         enemy.enemyAnimation(deltaTime);
 
-        view.setCenter(player->playerHitbox->getPosition().x, player->playerHitbox->getPosition().y);
+        //view.setCenter(player->playerHitbox->getPosition().x + 33.f, player->playerHitbox->getPosition().y + 48.f);
 
-        /*if(player->getIsOnGround())
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::G))
         {
-            std::cout << true << std::endl;
+            std::cout << std::endl << "Esta en el piso? ";
+            if(player->getIsOnGround()) std::cout << "si";
+            else { std::cout << "no"; }
         }
-        else
-        {
-            std::cout << false << std::endl;
-        }*/
 
         clock.restart();
         window.clear();
-        window.draw(houseSprite);
-        window.draw(player->playerSprite);
-        window.draw(npc->sprite);
-        window.draw(npc->npcHitBox);
+        //window.setView(view);
+        //window.draw(houseSprite);
+        window.draw(player->sprite);
+        //window.draw(*player->playerHitbox);
+        /*window.draw(npc->sprite);
+        window.draw(npc->npcHitBox);*/
         enemy.popUps(window, deltaTime);
         window.draw(*groundShape);
         window.display();

@@ -13,23 +13,28 @@ enum class NpcState
 class Npc
 {
     private:
+        const float PPM = 30.f;
         unsigned int currentFrame = 0;
-        float frameDuration = .2f;
+        float frameDuration = .1f;
         float npcElapsedTime = 0.f;
-        float moveSpeed;
+        float npcSpeed;
+        sf::IntRect npcIdle;
         sf::IntRect npcWalk[15];
         sf::Texture texture;
         b2Body* npcBody;
         b2Vec2 movement;
         void loadTextures();
-        NpcState state;
+        void switchState(NpcState);
+        NpcState npcState;
     public:
         sf::RectangleShape npcHitBox;
         sf::Vector2f spritePos;
         sf::Sprite sprite;
+        void walk(float);
+        void idle(float);
         void npcMove(float);
         void updateAnimation(float);
-        void walkAnimation(float);
+        void updatePhysics();
         Npc(b2World*, float, float);
         virtual ~Npc();
 };

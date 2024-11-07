@@ -6,19 +6,19 @@
 Enemy::Enemy()
     : _hp(100), lastDmg(0.0f), dmgTextF(0.f), textSpeed(-20.f), textOpacity(200), dmgCd(0.1f), alive(true), hitted(false)
 {
+    loadTextures();
     for(int i = 0; i < 20; i++)
     {
         damagePopUps[i] = nullptr;
     }
 
-    loadEnemyTextures();
     enemySprite.setTexture(texture);
     enemySprite.setTextureRect(enemyIdle[0]);
     enemySprite.setScale(-1.5f, 1.5f);
     enemySprite.setPosition(450, 415);
 }
 
-void Enemy::loadEnemyTextures()
+void Enemy::loadTextures()
 {
     if(!font.loadFromFile("Textures/font/textFont.ttf"))
     {

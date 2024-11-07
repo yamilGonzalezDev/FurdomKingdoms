@@ -14,7 +14,6 @@
 #include "loadTiles.hpp"
 #include "npc.hpp"
 
-
 class Game
 {
     private:

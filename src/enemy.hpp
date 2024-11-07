@@ -26,7 +26,7 @@ class Enemy
         Enemy();
 
         void damageText(float);
-        void loadEnemyTextures();
+        void loadTextures();
         void enemyAnimation(float);
         void takeDamage(int, float);
         void updateDamageText(float);

@@ -1,9 +1,11 @@
 #include "npc.hpp"
 
 Npc::Npc(b2World* world, float x, float y)
-    : moveSpeed(5.f), movement(b2Vec2(0.f, 0.f))
+    : npcSpeed(5.f), movement(b2Vec2(0.f, 0.f))
 {
     loadTextures();
+//    x = x / PPM;
+//    y = y / PPM;
     b2BodyDef npcBodyDef;
     npcBodyDef.type = b2_dynamicBody;
     npcBodyDef.position.Set(x, y);
@@ -27,6 +29,52 @@ Npc::Npc(b2World* world, float x, float y)
     sprite.setTextureRect(npcWalk[0]);
 }
 
+void Npc::updateAnimation(float deltaTime)
+{
+    switch(npcState)
+    {
+        case NpcState::Idle:
+            idle(deltaTime);
+        case NpcState::Walking:
+            walk(deltaTime);
+    }
+}
+
+void Npc::updatePhysics()
+{
+    npcHitBox.setSize(sf::Vector2f(40.f, 56.f));
+    spritePos = sf::Vector2f(npcBody->GetPosition().x * PPM, npcBody->GetPosition().y * PPM);
+    npcHitBox.setPosition(spritePos);
+    sprite.setPosition(spritePos);
+}
+
+void Npc::switchState(NpcState state)
+{
+    if(npcState == state) return;
+
+    switch(npcState)
+    {
+        case NpcState::Idle:
+            //logic();
+            break;
+        case NpcState::Walking:
+            //logic();
+            break;
+    }
+
+    npcState = state;
+
+    switch (npcState)
+    {
+        case NpcState::Idle:
+            //logic();
+            break;
+        case NpcState::Walking:
+            //logic();
+            break;
+    }
+}
+
 void Npc::loadTextures()
 {
     if(!texture.loadFromFile("Textures/NPCs/npc.png"))
@@ -38,29 +86,39 @@ void Npc::loadTextures()
     {
         npcWalk[i] = sf::IntRect(0, 56 * (i + 1), 40, 56);
     }
+
+    npcIdle = sf::IntRect(0, 0, 40, 56);
 }
 
 void Npc::npcMove(float deltaTime)
 {
-    if(rand() % 2 == 0)
+    movement = npcBody->GetLinearVelocity();
+
+    int random = rand() % 2;
+    if(random == 0)
     {
-        movement.x = -moveSpeed;
-        walkAnimation(deltaTime);
+        movement.x = -npcSpeed;
+        walk(deltaTime);
+    }
+    else if(random == 1)
+    {
+        movement.x = npcSpeed;
+        walk(deltaTime);
     }
     else
     {
-        movement.x = moveSpeed;
-        walkAnimation(deltaTime);
+        movement.x = 0.f;
+        idle(deltaTime);
     }
 
     npcBody->SetLinearVelocity(movement);
-    updateAnimation(deltaTime);
+    updatePhysics();
 }
 
-void Npc::walkAnimation(float deltaTime)
+void Npc::walk(float deltaTime)
 {
     npcElapsedTime = npcElapsedTime + deltaTime;
-    if(frameDuration >= frameDuration)
+    if(npcElapsedTime >= frameDuration)
     {
         currentFrame = (currentFrame + 1) % 15;
         sprite.setTextureRect(npcWalk[currentFrame]);
@@ -68,15 +126,11 @@ void Npc::walkAnimation(float deltaTime)
     }
 }
 
-void Npc::updateAnimation(float deltaTime)
+void Npc::idle(float deltaTime)
 {
-    npcHitBox.setSize(sf::Vector2f(40.f, 56.f));
-    spritePos = sf::Vector2f(npcBody->GetPosition().x, npcBody->GetPosition().y);
-    npcHitBox.setPosition(spritePos);
-    sprite.setPosition(spritePos);
+    sprite.setTextureRect(npcIdle);
 }
 
 Npc::~Npc()
 {
-
 }
