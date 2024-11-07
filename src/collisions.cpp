@@ -39,16 +39,18 @@ void Collision::EndContact(b2Contact* contact)
     UserdataTag* tagA = reinterpret_cast<UserdataTag*>(bA->GetUserData().pointer);
     UserdataTag* tagB = reinterpret_cast<UserdataTag*>(bB->GetUserData().pointer);
 
-    if(tagA && tagA->kind == PLAYER)
+    if(tagA->kind == PLAYER && tagB->kind == FLOOR)
     {
         Player* player = reinterpret_cast<Player*>(tagA->object);
         player->setIsJumping(true);
         player->setIsOnGround(false);
     }
-    if(tagB && tagB->kind == PLAYER)
+    if(tagA->kind == FLOOR && tagB->kind == PLAYER)
     {
         Player* player = reinterpret_cast<Player*>(tagB->object);
         player->setIsJumping(true);
         player->setIsOnGround(false);
     }
+
+//    delete tagA, tagB;
 }

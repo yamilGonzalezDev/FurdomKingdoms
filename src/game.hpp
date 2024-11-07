@@ -20,6 +20,7 @@ class Game
         const float pixels_per_meter = 30.0f;
         const float WIDTH = 1366;
         const float HEIGHT = 768;
+        const float FLOORHEIGHT = 528.f;
         float originalVolume = 1.f;
         float timeStep = 1.f/60.f;
         int velocityIterations = 8;
@@ -27,14 +28,16 @@ class Game
         sf::Vector2f rectPos;
         b2Vec2 bodyPos;
         b2Vec2 gravity;
+        Ground* ground;
         Player* player;
         Npc* npc;
         Collision* collisionCheck;
+        //Director* director;
 
     public:
         Game();
         ~Game();
-        sf::RectangleShape* groundShape;
+        sf::RectangleShape* wallShape;
         b2World* world;
         b2BodyDef playerBodyDef;
         b2Body* playerBody;
@@ -45,6 +48,7 @@ class Game
         sf::Clock clock;
 
         void gameEvents();
+        void createWall(float, float, float, float);
         void createGround(float, float, float, float);
         void createPlayer();
         void destroyBody(b2Body*);

@@ -879,7 +879,7 @@
 	<SFML/Graphics.hpp>
 	<box2d/box2d.h>
 
-1730946879 source:c:\utn\programación ii\furdomkingdoms\src\collisions.cpp
+1731020875 source:c:\utn\programación ii\furdomkingdoms\src\collisions.cpp
 	"collisions.hpp"
 	"player.hpp"
 	"scene.hpp"
@@ -1606,10 +1606,15 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1729558747 c:\utn\programación ii\furdomkingdoms\src\scene.hpp
-	"game.hpp"
+1730996712 c:\utn\programación ii\furdomkingdoms\src\scene.hpp
+	<SFML/Graphics.hpp>
+	<box2d/box2d.h>
+	"npc.hpp"
+	"globals.hpp"
+	"collisions.hpp"
+	"player.hpp"
 
-1730868794 c:\utn\programación ii\furdomkingdoms\src\game.hpp
+1730997101 c:\utn\programación ii\furdomkingdoms\src\game.hpp
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<box2d/box2d.h>
@@ -1645,7 +1650,7 @@
 	"texts.hpp"
 	<iostream>
 
-1730951595 source:c:\utn\programación ii\furdomkingdoms\src\game.cpp
+1730997284 source:c:\utn\programación ii\furdomkingdoms\src\game.cpp
 	"game.hpp"
 
 1730055163 source:c:\utn\programación ii\furdomkingdoms\src\housescene.cpp
@@ -1658,33 +1663,47 @@
 	"loadTiles.hpp"
 	<iostream>
 
-1730876003 source:c:\utn\programación ii\furdomkingdoms\src\main.cpp
+1731021112 source:c:\utn\programación ii\furdomkingdoms\src\main.cpp
 	<SFML/Audio.hpp>
 	<box2d/box2d.h>
 	"game.hpp"
+	"director.hpp"
+	<ctime>
 
-1730911504 c:\utn\programación ii\furdomkingdoms\src\globals.hpp
+1730967861 c:\utn\programación ii\furdomkingdoms\src\globals.hpp
 
 1730613739 source:c:\utn\programación ii\furdomkingdoms\src\npc.cpp
 	"npc.hpp"
 
-1730951573 source:c:\utn\programación ii\furdomkingdoms\src\player.cpp
+1730997284 source:c:\utn\programación ii\furdomkingdoms\src\player.cpp
 	"player.hpp"
 	<SFML/Audio.hpp>
 	<iostream>
 
-1728563332 source:c:\utn\programación ii\furdomkingdoms\src\scene.cpp
+1730996712 source:c:\utn\programación ii\furdomkingdoms\src\scene.cpp
 	"scene.hpp"
 
 1730848689 source:c:\utn\programación ii\furdomkingdoms\src\texts.cpp
 	"texts.hpp"
 
-1730951573 c:\utn\programación ii\furdomkingdoms\src\entity.hpp
+1730964041 c:\utn\programación ii\furdomkingdoms\src\entity.hpp
 	<SFML/Graphics.hpp>
 	<box2d/box2d.h>
 
-1730951573 source:c:\utn\programación ii\furdomkingdoms\src\entity.cpp
+1730997280 source:c:\utn\programación ii\furdomkingdoms\src\entity.cpp
 	"entity.hpp"
 	<cstring>
 	<iostream>
+
+1730996746 source:c:\utn\programación ii\furdomkingdoms\src\director.cpp
+	"director.hpp"
+	<iostream>
+
+1730996712 c:\utn\programación ii\furdomkingdoms\src\director.hpp
+	<box2d/box2d.h>
+	"npc.hpp"
+	"globals.hpp"
+	"collisions.hpp"
+	"player.hpp"
+	"scene.hpp"
 

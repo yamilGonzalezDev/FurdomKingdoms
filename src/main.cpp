@@ -1,19 +1,22 @@
 #include <SFML/Audio.hpp>
 #include <box2d/box2d.h>
 #include "game.hpp"
+#include "director.hpp"
 
 int main()
 {
-    Game game;
-    game.gameEvents();
+    Director director;
+    director.run();
 
+    /*Game game;
+    game.gameEvents();*/
 
     return 0;
 }
 
 //#include <ctime>
 //
-//void move(sf::Sprite&, float);
+//void smove(sf::Sprite&, float);
 //
 //void moveEnemy(sf::Sprite&, float);
 //
@@ -69,7 +72,7 @@ int main()
 //
 //        float dT = clock.getElapsedTime().asSeconds();
 //
-//        move(sprite1, dT);
+//        smove(sprite1, dT);
 //        moveEnemy(sprite2, dT);
 //
 //        clock.restart();
@@ -83,7 +86,7 @@ int main()
 //    return 0;
 //}
 //
-//void move(sf::Sprite& sprite, float deltaTime)
+//void smove(sf::Sprite& sprite, float deltaTime)
 //{
 //    sf::Vector2f movement = sf::Vector2f(0.f, 0.f);
 //
@@ -104,5 +107,14 @@ int main()
 //
 //void moveEnemy(sf::Sprite& sprite, float deltaTime)
 //{
+//    int randomMove = rand() % 200 + 1;
 //
+//    if(randomMove < 100)
+//    {
+//        if(sprite.getPosition().x > 500)
+//        {
+//            randomMove -= 20;
+//        }
+//        sprite.move((float)randomMove * deltaTime, 0.f);
+//    }
 //}

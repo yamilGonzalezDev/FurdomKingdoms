@@ -26,13 +26,6 @@ bool Player::loadTextures()
         return false;
     }
 
-    if(!bg.loadFromFile("Textures/firstLevel/fondo.jpg"))
-    {
-        return false;
-    }
-
-    bgTexture.loadFromImage(bg);
-
     playerIdle =
     {
         sf::IntRect(0, 0, CHARACTERWIDTH, CHARACTERHEIGTH),

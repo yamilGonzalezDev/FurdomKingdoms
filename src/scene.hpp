@@ -1,26 +1,62 @@
 #ifndef SCENE_HPP_INCLUDED
 #define SCENE_HPP_INCLUDED
 
-#include "game.hpp"
+#include <SFML/Graphics.hpp>
+#include <box2d/box2d.h>
+#include "npc.hpp"
+#include "globals.hpp"
+#include "collisions.hpp"
+#include "player.hpp"
 
-class Ground : public sf::Drawable, public sf::Transformable
+class Scene
+{
+    protected:
+        const float WIDTH = 1366;
+        const float HEIGHT = 768;
+    public:
+        virtual ~Scene(){}
+
+        virtual void init() = 0;
+
+        virtual void update(float) = 0;
+
+        virtual void render(sf::RenderWindow&) = 0;
+
+        virtual void cleanup() = 0;
+
+        virtual bool shouldTransition() = 0;
+};
+
+class MenuScene : public Scene
 {
     public:
-        bool load(const std::string& tileset, sf::Vector2f tileSize, int tilesCountX);
-        sf::FloatRect getBounds();
+        MenuScene();
+        void init() override;
+        void update(float) override;
+        void render(sf::RenderWindow&) override;
+        void cleanup() override;
+        bool shouldTransition() override;
+        sf::Sprite background;
+        sf::Texture backgroundTexture;
     private:
-        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override
-        {
-            states.transform *= getTransform();
+};
 
-            states.texture = &m_texture;
+class HouseScene : public Scene
+{
+    public:
+        void init() override;
+        void update(float) override;
+        void render(sf::RenderWindow&) override;
+        void cleanup() override;
+        bool shouldTransition() override;
+        sf::Sprite background;
+        sf::Texture backgroundTexture;
+    private:
+};
 
-            target.draw(m_vertices, states);
-        }
+class Ciudad
+{
 
-        sf::VertexArray m_vertices;
-        sf::Texture m_texture;
-        int m_tilesCountX;
 };
 
 #endif // SCENE_HPP_INCLUDED

@@ -12,6 +12,7 @@ typedef struct
 } UserdataTag;
 
 const int PLAYER = 1;
+const int FLOOR = 2;
 
 void initBody(b2Body*, int, int, void*);
 

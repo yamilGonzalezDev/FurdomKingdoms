@@ -55,6 +55,8 @@
 		</Linker>
 		<Unit filename="src/collisions.cpp" />
 		<Unit filename="src/collisions.hpp" />
+		<Unit filename="src/director.cpp" />
+		<Unit filename="src/director.hpp" />
 		<Unit filename="src/enemy.cpp" />
 		<Unit filename="src/enemy.hpp" />
 		<Unit filename="src/entity.cpp" />
